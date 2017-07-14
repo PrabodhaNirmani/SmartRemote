@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.example.prabodhaharankahadeniya.smartremote.SaveCommandActivity">
 
 
@@ -68,4 +69,17 @@
         android:layout_alignBaseline="@+id/btnSave"
         android:layout_alignBottom="@+id/btnSave"
         android:layout_alignStart="@+id/btnSave" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv"
+        android:layout_below="@id/btnUpdate"
+        android:text="Command saved as : "
+        android:layout_margin="30dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSavedMsg"
+        android:layout_below="@id/tv" />
+
 </RelativeLayout>

@@ -228,6 +228,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     private class MyListAdapter extends ArrayAdapter<String> {
 
         private int layout;
@@ -299,6 +301,8 @@ public class MainActivity extends AppCompatActivity {
         TextView deviceName;
         ImageButton deleteButton;
     }
+
+
 
 
 

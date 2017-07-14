@@ -1,6 +1,7 @@
 package com.example.prabodhaharankahadeniya.smartremote;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,27 @@ public class RemoteActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Cursor cursor=MainActivity.getDatabaseHelper().getAllDevices();
+        if(cursor==null){
+            Log.d(TAG,"null");
+        }
+        else {
+            Log.d(TAG,"else");
+            for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+                boolean finished=MainActivity.getDatabaseHelper().confirmRegistration(ConnectionActivity.getDeviceId());
+                if(finished && ConnectionActivity.getViewId().equals("0")) {
+                    Toast.makeText(RemoteActivity.this,"This device initiated successfully ", Toast.LENGTH_LONG).show();
+
+                }
+
+
+            }
+            cursor.close();
+        }
+    }
 
     public void saveIncrease(View v){
         String cursor=MainActivity.getDatabaseHelper().getCommand(ConnectionActivity.getDeviceId(),"increase");
@@ -57,7 +79,7 @@ public class RemoteActivity extends AppCompatActivity {
                 startActivity(intent);
 
             } else {
-                // String signal=cursor.getString(3);
+
 
                 byte[] bytes = cursor.getBytes(Charset.defaultCharset());
                 ConnectionActivity.mBluetoothConnection.write(bytes);
@@ -165,7 +187,6 @@ public class RemoteActivity extends AppCompatActivity {
 
             }
             else {
-                // String signal=cursor.getString(3);
 
                 byte[] bytes=cursor.getBytes(Charset.defaultCharset());
                 ConnectionActivity.mBluetoothConnection.write(bytes);
