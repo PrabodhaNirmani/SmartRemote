@@ -1,5 +1,6 @@
 package com.example.prabodhaharankahadeniya.smartremote;
 
+import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class SaveCommandActivity extends AppCompatActivity {
     static TextView tvSignal;
     Button save;
     Button update;
+    TextView tv;
 
     private String saveMode;
 
@@ -40,6 +42,7 @@ public class SaveCommandActivity extends AppCompatActivity {
         tvSignal=(TextView)findViewById(R.id.tvMsg);
         update=(Button)findViewById(R.id.btnUpdate);
         save=(Button)findViewById(R.id.btnSave);
+        tv=(TextView)findViewById(R.id.tvSavedMsg);
 
 
         Log.d(TAG,"testCom");
@@ -124,6 +127,9 @@ public class SaveCommandActivity extends AppCompatActivity {
         else {
             MainActivity.getDatabaseHelper().insertCommand(ConnectionActivity.getDeviceId(),commandType,signal);
             save.setEnabled(false);
+            String cursor=MainActivity.getDatabaseHelper().getCommand(ConnectionActivity.getDeviceId(),commandType);
+            tv.setText(cursor);
+
         }
 
     }
