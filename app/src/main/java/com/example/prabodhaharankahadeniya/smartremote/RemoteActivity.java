@@ -45,6 +45,10 @@ public class RemoteActivity extends AppCompatActivity {
                 boolean finished=MainActivity.getDatabaseHelper().confirmRegistration(ConnectionActivity.getDeviceId());
                 if(finished && ConnectionActivity.getViewId().equals("0")) {
                     Toast.makeText(RemoteActivity.this,"This device initiated successfully ", Toast.LENGTH_LONG).show();
+                    Intent b = new Intent(this,MainActivity.class);
+                    b.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(b);
+                    this.finish();
 
                 }
 

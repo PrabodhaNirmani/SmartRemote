@@ -196,10 +196,6 @@ public class ConnectionActivity extends AppCompatActivity implements AdapterView
         btnStartConnection=(Button)findViewById(R.id.btnStartConnection);
         btnDiscover=(Button)findViewById(R.id.btnFindUnpairedDevices);
         next=(Button)findViewById(R.id.next);
-        //next.setVisibility(View.INVISIBLE);
-
-        mBTDevices = new ArrayList<>();
-
 
 
 //        btnSend=(Button)findViewById(R.id.btnSend);
@@ -340,10 +336,6 @@ mBTDevices.clear();
             mBluetoothAdapter.cancelDiscovery();
             Log.d(TAG, "btnDiscover: Canceling discovery.");
             Toast.makeText(ConnectionActivity.this,"Cancel bluetooth discovery ", Toast.LENGTH_LONG).show();
-            Intent b = new Intent(this,MainActivity.class);
-            b.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(b);
-            this.finish();
 
             //check BT permissions in manifest
             checkBTPermissions();
