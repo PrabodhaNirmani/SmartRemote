@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.example.prabodhaharankahadeniya.smartremote.ConnectionActivity">
 
     <Button
@@ -47,7 +48,7 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/btnStartConnection"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:id="@+id/lvNewDevices"/>
 
 
@@ -59,13 +60,14 @@
         <!--android:layout_alignParentStart="true"-->
         <!--android:id="@+id/editText" />-->
 
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="SEND"-->
-        <!--android:id="@+id/btnSend"-->
-        <!--android:layout_toRightOf="@+id/editText"-->
-        <!--android:layout_below="@+id/lvNewDevices"/>-->
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvNewDevices"
+
+        android:onClick="saveCommands"
+        android:text="Next" />
 
     <!--<EditText-->
         <!--android:id="@+id/editText2"-->
