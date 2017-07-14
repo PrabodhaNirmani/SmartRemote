@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prabodhaharankahadeniya.smartremote.SaveCommandActivity">
+
+
+    <ImageButton
+        android:id="@+id/btn_command"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@android:drawable/gallery_thumb"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/tvCmd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btn_command"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/btn_command"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_command"
+        android:layout_below="@+id/btn_command"
+        android:layout_marginTop="53dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMsg"
+        android:layout_marginTop="101dp"
+        android:layout_toEndOf="@+id/btn_command"
+        android:onClick="testCommand"
+        android:text="Test" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnTest"
+        android:layout_alignBottom="@+id/btnTest"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/btnTest"
+        android:onClick="saveSignal"
+        android:text="Save signal" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Signal"
+        android:onClick="updateSignal"
+        android:layout_alignBaseline="@+id/btnSave"
+        android:layout_alignBottom="@+id/btnSave"
+        android:layout_alignStart="@+id/btnSave" />
+</RelativeLayout>
